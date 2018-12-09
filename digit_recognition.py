@@ -7,13 +7,15 @@ class digit_recognition(object):
     """
     Code to read data for digit recognition
     """
-    data = 10
     def __init__(self):
         """
         This Method is always called first
         Initialize all values here
         """
-        print(self.data)
+        self.train = pd.read_csv('data/train.csv')
+        self.test = pd.read_csv('data/test.csv')
+
+
 
 if __name__ == '__main__':
     obj = digit_recognition()
