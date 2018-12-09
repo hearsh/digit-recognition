@@ -7,12 +7,13 @@ class digit_recognition(object):
     """
     Code to read data for digit recognition
     """
-
     def __init__(self):
         """
         This Method is always called first
         Initialize all values here
         """
+        self.train = pd.read_csv('data/train.csv')
+        self.test = pd.read_csv('data/test.csv')
         self.data = pd.read_csv('data/train.csv')
         self.create_images()
         print(self.all_images)
@@ -36,7 +37,6 @@ class digit_recognition(object):
                     x += 1
             image_dict["image"] = single_image
             self.all_images.append(image_dict)
-
 
 if __name__ == '__main__':
     obj = digit_recognition()
