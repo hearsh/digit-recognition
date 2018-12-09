@@ -1,2 +1,2 @@
 # digit-recognition
-using computer vision to recognize digits
+using computer vision and deep learning to recognize digits
