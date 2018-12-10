@@ -22,9 +22,11 @@ class digit_recognition(object):
         """
         self.train = pd.read_csv('data/train.csv')
         self.test = pd.read_csv('data/test.csv')
+        """
         self.data = pd.read_csv('data/train.csv')
         self.create_images()
         print(self.all_images)
+        """
 
     def create_images(self):
         self.all_images = []
@@ -53,11 +55,13 @@ class digit_recognition(object):
         :return:
         """
         Y_train = self.train['label']
-        X_train = self.train.drop(labels=['label'],axis=1)
+        X_train = self.train.drop(labels=['label'], axis=1)
         X_train = X_train/255.0
         self.test = self.test/255.0
         X_train = X_train.values.reshape(-1, 28, 28, 1)
         self.test = self.test.values.reshape(-1, 28, 28, 1)
+        print(type(X_train))
 
 if __name__ == '__main__':
     obj = digit_recognition()
+    obj.preprocessing()
